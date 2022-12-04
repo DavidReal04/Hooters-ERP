@@ -1,5 +1,4 @@
 package programmersAliance.view;
 
-public class MainView {
-
+public class Vventas {
 }
