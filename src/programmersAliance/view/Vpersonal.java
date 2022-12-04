@@ -29,8 +29,7 @@ public class Vpersonal extends JFrame {
         getContentPane().add(texto[0]);
 
         area[0] = new JTable();
-        area[0].setModel(new DefaultTableModel(
-        new Object[][]{},new String[]{"ID","TipoDoc","Nombres","Apellidos","Edad","EstadoCivil","Cargo","NumeroTel","Estadísticas"}));
+        area[0].setModel(new DefaultTableModel(new Object[][]{},new String[]{"ID","TipoDoc","Nombres","Apellidos","Edad","EstadoCivil","Cargo","NumeroTel","Estadísticas"}));
         JScrollPane scrollpane2 = new JScrollPane(area[0]);
         scrollpane2.setBounds(64, 36, 527, 396);
         scrollpane2.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -39,22 +38,22 @@ public class Vpersonal extends JFrame {
 
         botones[0] = new JButton("Modificar emplado");
         botones[0].setBounds(64, 457, 140, 27);
-        botones[0].addActionListener(evt -> Controller.personal(false,true,false,false));
+        botones[0].addActionListener(evt -> Controller.personal(false,true,false,false,false));
         getContentPane().add(botones[0]);
 
         botones[1] = new JButton("Agregar empleado");
         botones[1].setBounds(218, 457, 140, 27);
-        botones[1].addActionListener(evt -> Controller.personal(true,false,false,false));
+        botones[1].addActionListener(evt -> Controller.personal(true,false,false,false,false));
         getContentPane().add(botones[1]);
 
         botones[2] = new JButton("Eliminar/desactivar empleado");
         botones[2].setBounds(370, 457, 220, 27);
-        botones[2].addActionListener(evt -> Controller.personal(false,false,true,false));
+        botones[2].addActionListener(evt -> Controller.personal(false,false,true,false,false));
         getContentPane().add(botones[2]);
 
         botones[3] = new JButton("Volver");
         botones[3].setBounds(160, 508, 300, 27);
-        botones[3].addActionListener(evt -> Controller.personal(false,false,false,true));
+        botones[3].addActionListener(evt -> Controller.personal(false,false,false,true,false));
         getContentPane().add(botones[3]);
     }
 

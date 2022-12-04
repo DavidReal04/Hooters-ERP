@@ -13,6 +13,7 @@ public class Controller {
 	private static VagregarProd agregarProd;
 	private static VmodProducto actProducto;
 	private static VdesEliProd eliProd;
+	private static Vventas modVentas;
 
 	public Controller() {
 		login = new VLogin();
@@ -25,6 +26,7 @@ public class Controller {
 		agregarProd = new VagregarProd();
 		actProducto = new VmodProducto();
 		eliProd = new VdesEliProd();
+		modVentas = new Vventas();
 	}
 	public static void login(boolean seguir) {
 		//Falta condiciones para login
@@ -147,14 +149,14 @@ public class Controller {
 			modProductos.setVisible(true);
 			m.setVisible(false);
 		}if(vent){
-			modPersonal.setVisible(true);
+			modVentas.setVisible(true);
 			m.setVisible(false);
 		}if(salir){
 			System.exit(0);
 		}
 	}
 	//No hay botones que hagan funcionalidades
-	public static void personal(boolean agregar, boolean mod, boolean eli, boolean volver){
+	public static void personal(boolean agregar, boolean mod, boolean eli, boolean volver,boolean volver1){
 		if(agregar){
 			modPersonal.setVisible(false);
 			agregarPer.setVisible(true);
@@ -165,6 +167,11 @@ public class Controller {
 			modPersonal.setVisible(false);
 			elides.setVisible(true);
 		}if(volver){
+			modPersonal.setVisible(false);
+			m.setVisible(true);
+		}if(volver1){
+			modVentas.setVisible(false);
+			modProductos.setVisible(false);
 			modPersonal.setVisible(false);
 			m.setVisible(true);
 		}
