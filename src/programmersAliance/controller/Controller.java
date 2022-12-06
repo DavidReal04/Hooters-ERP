@@ -92,7 +92,7 @@ public class Controller {
 					modEmp.getDateChooser().setDate(new SimpleDateFormat("yyyy-MM-dd").parse(empleado[4].toString()));
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
-					e.printStackTrace();
+					//e.printStackTrace();
 				}
 				modEmp.getDateChooser().setEnabled(true);
 				int eci = Integer.parseInt(empleado[5].toString().split("-")[0]);
