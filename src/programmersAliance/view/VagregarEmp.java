@@ -9,7 +9,7 @@ public class VagregarEmp extends JFrame {
         private JButton[] botones = new JButton[2];
         private JTextArea[] area = new JTextArea[7];
         private JLabel[] texto = new JLabel[9];
-        private JDateChooser dateChooser = new JDateChooser();
+        private JDateChooser fecha = new JDateChooser("yyyy/MM/dd", "####/##/##", '_');
         private JComboBox<String> agDoc = new JComboBox<String>();
         private JComboBox<String> estadoCivil = new JComboBox<String>();
         private JComboBox<String> agCargo = new JComboBox<String>();
@@ -62,9 +62,9 @@ public class VagregarEmp extends JFrame {
             texto[6] = new JLabel("Ingrese la fecha de nacimiento:");
             texto[6].setBounds(14,186,200,21);
             getContentPane().add(texto[6]);
-            JDateChooser dateChooser = new JDateChooser("yyyy/MM/dd", "####/##/##", '_');
-            dateChooser.setBounds(216,186,164,27);
-            getContentPane().add(dateChooser);
+            //JDateChooser dateChooser = new JDateChooser();
+            fecha.setBounds(216,186,164,27);
+            getContentPane().add(fecha);
 
             texto[7] = new JLabel("Ingrese estado civil:");
             texto[7].setBounds(14,223,150,21);
@@ -136,12 +136,12 @@ public class VagregarEmp extends JFrame {
         this.texto = texto;
     }
 
-    public JDateChooser getDateChooser() {
-        return dateChooser;
+    public JDateChooser getFecha() {
+        return fecha;
     }
 
-    public void setDateChooser(JDateChooser dateChooser) {
-        this.dateChooser = dateChooser;
+    public void setFecha(JDateChooser dateChooser) {
+        this.fecha = dateChooser;
     }
 
     public JComboBox<String> getAgDoc() {

@@ -9,6 +9,7 @@ public class Vproductos extends JFrame {
     private JButton[] botones = new JButton[4];
     private JTable[] area = new JTable[1];
     private JLabel[] texto = new JLabel[1];
+    private DefaultTableModel modelo;
 
     public Vproductos() {
         setTitle("Modulo productos");
@@ -78,4 +79,13 @@ public class Vproductos extends JFrame {
     public void setTexto(JLabel[] texto) {
         this.texto = texto;
     }
+
+	public DefaultTableModel getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(DefaultTableModel modelo) {
+		this.modelo = modelo;
+	}
+    
 }

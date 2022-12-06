@@ -8,9 +8,10 @@ import javax.swing.table.DefaultTableModel;
 
 public class VmodProducto extends JFrame {
     private JButton[] botones = new JButton[4];
-    private JTextArea[] area = new JTextArea[4];
+    private JTextArea[] area = new JTextArea[5];
     private JLabel[] texto = new JLabel[5];
     private JTable table = new JTable();
+    private DefaultTableModel model;
 
     public VmodProducto() {
         setTitle("Editar producto");
@@ -48,6 +49,7 @@ public class VmodProducto extends JFrame {
         getContentPane().add(texto[1]);
         area[1] = new JTextArea();
         area[1].setBounds(186, 130, 194, 27);
+        area[1].setEnabled(false);
         getContentPane().add(area[1]);
 
         texto[2] = new JLabel("Edite el nombre del producto:");
@@ -55,12 +57,14 @@ public class VmodProducto extends JFrame {
         getContentPane().add(texto[2]);
         area[2] = new JTextArea("");
         area[2].setBounds(216, 170, 164, 27);
+        area[2].setEnabled(false);
         getContentPane().add(area[2]);
 
         texto[3] = new JLabel("Edite descripción del producto:");
         texto[3].setBounds(14, 210, 200, 21);
         getContentPane().add(texto[3]);
         area[3] = new JTextArea("");
+        area[3].setEnabled(false);
         JScrollPane scrollpane = new JScrollPane(area[3]);
         scrollpane.setBounds(14, 230, 365, 50);
         scrollpane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
@@ -69,13 +73,15 @@ public class VmodProducto extends JFrame {
         texto[4] = new JLabel("Edite precio del producto:");
         texto[4].setBounds(14, 300, 170, 21);
         getContentPane().add(texto[4]);
-        area[3] = new JTextArea("");
-        area[3].setBounds(180, 300, 200, 27);
-        getContentPane().add(area[3]);
+        area[4] = new JTextArea("");
+        area[4].setBounds(180, 300, 200, 27);
+        area[4].setEnabled(false);
+        getContentPane().add(area[4]);
 
         botones[1] = new JButton("Modificar");
         botones[1].setBounds(252, 360, 101, 27);
         botones[1].addActionListener(evt -> Controller.PProductos(false, false,false,true,false,false,false,false));
+        botones[1].setEnabled(false);
         getContentPane().add(botones[1]);
 
         botones[3] = new JButton("Volver");
@@ -115,4 +121,13 @@ public class VmodProducto extends JFrame {
     public void setTable(JTable table) {
         this.table = table;
     }
+
+	public DefaultTableModel getModel() {
+		return model;
+	}
+
+	public void setModel(DefaultTableModel model) {
+		this.model = model;
+	}
+    
 }

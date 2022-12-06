@@ -14,7 +14,8 @@ public class VModEmp extends JFrame {
     private JComboBox<String> edEstadoCivil = new JComboBox<String>();
     private JComboBox<String> edCargo = new JComboBox<String>();
     private JComboBox<String> editDoc = new JComboBox<String>();
-    private JComboBox<String> editCargo = new JComboBox<String>();
+    private JDateChooser dateChooser = new JDateChooser("yyyy/MM/dd", "####/##/##", '_');
+    private DefaultTableModel modelo;
 
     public VModEmp() {
         setTitle("Editar empleado");
@@ -53,25 +54,27 @@ public class VModEmp extends JFrame {
         getContentPane().add(texto[1]);
         area[1] = new JTextArea();
         area[1].setBounds(186,120,194,27);
+        area[1].setEnabled(false);
         getContentPane().add(area[1]);
 
         texto[2] = new JLabel("Edite el tipo documento:");
         texto[2].setBounds(13,160,157,21);
         getContentPane().add(texto[2]);
-        JComboBox<String> agDoc = new JComboBox<String>();
-        agDoc.setBounds(186, 160, 194, 27);
-        agDoc.addItem("Tipo documento");
-        agDoc.addItem("1-NI");
-        agDoc.addItem("2-CC");
-        agDoc.addItem("3-PA");
-        agDoc.addItem("4-CE");
-        getContentPane().add(agDoc);
+        editDoc.setBounds(186, 160, 194, 27);
+        editDoc.addItem("Tipo documento");
+        editDoc.addItem("1-NI");
+        editDoc.addItem("2-CC");
+        editDoc.addItem("3-PA");
+        editDoc.addItem("4-CE");
+        editDoc.setEnabled(false);
+        getContentPane().add(editDoc);
 
         texto[3] = new JLabel("Edite los nombres del empleado:");
         texto[3].setBounds(14,200,200,21);
         getContentPane().add(texto[3]);
         area[2] = new JTextArea("");
         area[2].setBounds(216,200,164,27);
+        area[2].setEnabled(false);
         getContentPane().add(area[2]);
 
         texto[4] = new JLabel("Edite los apellidos del empleado:");
@@ -79,13 +82,14 @@ public class VModEmp extends JFrame {
         getContentPane().add(texto[4]);
         area[3] = new JTextArea("");
         area[3].setBounds(216,240,164,27);
+        area[3].setEnabled(false);
         getContentPane().add(area[3]);
 
         texto[5] = new JLabel("Edite la fecha de nacimiento:");
         texto[5].setBounds(14,280,200,21);
         getContentPane().add(texto[5]);
-        JDateChooser dateChooser = new JDateChooser("yyyy/MM/dd", "####/##/##", '_');
         dateChooser.setBounds(216,280,164,27);
+        dateChooser.setEnabled(false);
         getContentPane().add(dateChooser);
 
         texto[6] = new JLabel("Edite estado civil:");
@@ -96,6 +100,7 @@ public class VModEmp extends JFrame {
         edEstadoCivil.addItem("Estado civil");
         edEstadoCivil.addItem("1-Soltero");
         edEstadoCivil.addItem("2-Casado");
+        edEstadoCivil.setEnabled(false);
         getContentPane().add(edEstadoCivil);
 
         texto[7] = new JLabel("Edite el cargo:");
@@ -114,6 +119,7 @@ public class VModEmp extends JFrame {
         edCargo.addItem("8-Barman o bartender");
         edCargo.addItem("9-Lavavajillas");
         edCargo.addItem("10-Cajero");
+        edCargo.setEnabled(false);
         getContentPane().add(edCargo);
 
         texto[8] = new JLabel("Edite numero telefonico:");
@@ -121,11 +127,13 @@ public class VModEmp extends JFrame {
         getContentPane().add(texto[8]);
         area[4] = new JTextArea("");
         area[4].setBounds(180,400,200,27);
+        area[4].setEnabled(false);
         getContentPane().add(area[4]);
 
         botones[1] = new JButton("Generar cambios");
         botones[1].setBounds(135, 460, 140, 27);
         botones[1].addActionListener(evt -> Controller.PPersonal(false, false,false,true,false,false,false,false));
+        botones[1].setEnabled(false);
         getContentPane().add(botones[1]);
 
         botones[2] = new JButton("Volver");
@@ -190,11 +198,21 @@ public class VModEmp extends JFrame {
         this.editDoc = editDoc;
     }
 
-    public JComboBox<String> getEditCargo() {
-        return editCargo;
-    }
 
-    public void setEditCargo(JComboBox<String> editCargo) {
-        this.editCargo = editCargo;
-    }
+	public JDateChooser getDateChooser() {
+		return dateChooser;
+	}
+
+	public void setDateChooser(JDateChooser dateChooser) {
+		this.dateChooser = dateChooser;
+	}
+
+	public DefaultTableModel getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(DefaultTableModel modelo) {
+		this.modelo = modelo;
+	}
+    
 }
