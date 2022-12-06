@@ -18,7 +18,7 @@ public class BDConection {
 			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Hooters","root","0000");
 
 			if (connection != null) {
-				//System.out.println("Conexi�n a base de datos " + bd + " OK\n");
+				//System.out.println("Conexión a base de datos");
 			}
 		} catch (SQLException e) {
 			System.out.println(e);
@@ -29,7 +29,7 @@ public class BDConection {
 		}
 	}
 
-	/** Permite retornar la conexi�n */
+	/** Permite retornar la conexión */
 	public Connection getConnection() {
 		return connection;
 	}

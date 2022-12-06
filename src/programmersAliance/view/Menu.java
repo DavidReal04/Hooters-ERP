@@ -58,7 +58,7 @@ public class Menu extends JFrame{
         getContentPane().add(botones[3]);
 
         botones[4] = new JButton("Volver");
-        botones[4].setBounds(50, 232, 70, 27);
+        botones[4].setBounds(50, 232, 80, 27);
         botones[4].addActionListener(evt -> Controller.menu(false, false, false, true, false));
         getContentPane().add(botones[4]);
     }
