@@ -137,7 +137,7 @@ public class VModEmp extends JFrame {
         getContentPane().add(botones[1]);
 
         botones[2] = new JButton("Volver");
-        botones[2].setBounds(168, 500, 70, 27);
+        botones[2].setBounds(168, 500, 90, 27);
         botones[2].addActionListener(evt -> Controller.PPersonal(false, false,false,false,true,false,false,false));
         getContentPane().add(botones[2]);
     }
