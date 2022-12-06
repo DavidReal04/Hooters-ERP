@@ -66,7 +66,7 @@ public class Controller {
 		if(agregar){
 			if(modelo.getPersonal().agregarPersonal(agregarPer.getArea()[0].getText(), agregarPer.getAgDoc().getSelectedItem().toString(), agregarPer.getArea()[1].getText(), agregarPer.getArea()[3].getText(), new SimpleDateFormat("yyyy-MM-dd").format(agregarPer.getFecha().getDate()), agregarPer.getEstadoCivil().getSelectedItem().toString(), agregarPer.getAgCargo().getSelectedItem().toString(), agregarPer.getArea()[2].getText())) {
 				modVentas.getIdEmpleado().addItem(agregarPer.getArea()[0].getText());
-				JOptionPane.showMessageDialog(null,"Se a Guardado Exitosamente");
+				JOptionPane.showMessageDialog(null,"Se ha Guardado Exitosamente");
 			}else {
 				JOptionPane.showMessageDialog(null,"Error al Guardar");
 			}
@@ -207,7 +207,7 @@ public class Controller {
 		if(agregar){
 			if(modelo.getProductos().agregarProductos(agregarProd.getArea()[0].getText(),agregarProd.getArea()[1].getText() , agregarProd.getArea()[3].getText(),agregarProd.getArea()[2].getText())) {
 				modVentas.getProductoVentas().addItem(agregarProd.getArea()[1].getText());
-				JOptionPane.showMessageDialog(null,"Se a Guardado Exitosamente");
+				JOptionPane.showMessageDialog(null,"Se ha Guardado Exitosamente");
 			}else {
 				JOptionPane.showMessageDialog(null,"Error al Guardar");
 			}
@@ -229,7 +229,7 @@ public class Controller {
 				actProducto.getArea()[4].setEnabled(true);
 				actProducto.getBotones()[1].setEnabled(true);
 			}else {
-				JOptionPane.showMessageDialog(null,"No se a encontrado");
+				JOptionPane.showMessageDialog(null,"No se ha encontrado");
 				limpiarModProductosl();
 			}
 		}
@@ -239,7 +239,7 @@ public class Controller {
 			if(modelo.getProductos().actuaizarProductos( actProducto.getArea()[1].getText(), actProducto.getArea()[2].getText(), actProducto.getArea()[3].getText(), actProducto.getArea()[4].getText())) {
 				JOptionPane.showMessageDialog(null,"Actualizado Exitosamente");
 			}else {
-				JOptionPane.showMessageDialog(null,"No se a Actualizado");
+				JOptionPane.showMessageDialog(null,"No se ha Actualizado");
 			}
  		}
 		//Boton para eliminar producto
@@ -401,14 +401,14 @@ public class Controller {
 		if(cobrar) {
 			if(modelo.getVentas().guardarFactura(modVentas.getIdEmpleado().getSelectedItem().toString())) {
 				if(modelo.getVentas().guardarDetalle(modelo.getVentas().obtenerFactura())) {
-					modelo.getVentas().getId_cantidad_subtotal().clear();
+					JOptionPane.showMessageDialog(null,"Subtotal : "+modelo.getVentas().getS()+"\nIva : "+modelo.getVentas().getI()+"\nTotal : "+modelo.getVentas().getT());
+					modelo.getVentas().getId_cantidad_subtotal().clear();					
 					modelo.getVentas().setS(0);
 					modelo.getVentas().setT(0);
 					for(int i=0;i<modVentas.getTable().getRowCount();i++) {
 						modVentas.getModelo().removeRow(i);
 						i=i-1;
-					}
-					JOptionPane.showMessageDialog(null,"Subtotal : "+modelo.getVentas().getS()+"\nIva : "+modelo.getVentas().getI()+"\nTotal : "+modelo.getVentas().getT());
+					}					
 				}else {
 					JOptionPane.showMessageDialog(null,"Error al Detalle");
 				}
